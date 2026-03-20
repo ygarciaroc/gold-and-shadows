@@ -1,31 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Build.Content;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-
 public class Health : MonoBehaviour
 {
-    public int hp = 5;
+    //amount of current health
+    [SerializeField] int hp = 5;
 
+    //reduces object's health by input damage value
+    //and if this object is a player and it no longer
+    //has any health, go back to title screen or end run
     public void TakeDamage(int damage)
     {
         hp -= damage;
 
-        if(gameObject.CompareTag("Player"))
+        if (gameObject.CompareTag("Player"))
         {
-            GameFeel.AddFlashRed(.5f);
+            print("Player took " + damage + " damage!");
         }
-
         if (hp <= 0)
         {
             if (gameObject.CompareTag("Player"))
             {
-                GameManager.LoadScene(0);
+                print("player's been defeated");
+                //GameManager.LoadScene(0);
             }
             else
             {
-                EnemyCounter.EnemyDestroyed();
                 Destroy(gameObject);
             }
         }

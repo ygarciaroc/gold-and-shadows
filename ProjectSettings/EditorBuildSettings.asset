@@ -4,5 +4,12 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity
+    guid: 5070bf9f74dd45044a9ac45eb2c66a25
+  - enabled: 1
+    path: Assets/Scenes/EagleEye_POV.unity
+    guid: 2336c1e3eeb3a6142813316bc3e16ca3
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
